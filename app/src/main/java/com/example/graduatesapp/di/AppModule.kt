@@ -21,8 +21,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class AppModule {
     //retrofit
-
-
     @Provides
     fun providesBaseUrl() = EndPoints.BASE_URL
 

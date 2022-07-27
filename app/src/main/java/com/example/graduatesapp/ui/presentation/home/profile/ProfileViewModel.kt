@@ -20,6 +20,7 @@ class ProfileViewModel @Inject constructor(@ApplicationContext context:Context):
     private val accessToken = sharedPreferences.getString("access_token","")!!
      val name = sharedPreferences.getString("name","")!!
      val email = sharedPreferences.getString("email","")!!
+     val avatar = sharedPreferences.getString("avatar","")
 
     private val _isCleared = MutableLiveData<Boolean>()
     val isCleared:LiveData<Boolean> = _isCleared

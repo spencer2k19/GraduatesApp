@@ -34,6 +34,7 @@ private val authRepository: AuthRepository):ViewModel() {
                 editor.putString("token_type",info.tokenType)
                 editor.putString("name",info.user.name)
                 editor.putString("email",info.user.email)
+                editor.putString("avatar",info.user.avatar)
                 editor.putInt("id",info.user.id)
                 editor.commit()
             }

@@ -6,4 +6,5 @@ data class NetworkUser(
     @SerializedName("id")val id:Int,
     val name:String,
     val email:String,
+    val avatar:String?
 )

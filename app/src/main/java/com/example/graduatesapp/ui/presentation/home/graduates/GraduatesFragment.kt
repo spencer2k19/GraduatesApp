@@ -56,6 +56,7 @@ class GraduatesFragment : Fragment() {
 
         binding.graduates.adapter = graduateAdapter
         binding.refresh.setOnRefreshListener {
+            binding.diplomas.clearCheck()
             graduateViewModel.fetchGraduates(sectorId = sectorId.toString())
         }
         binding.back.setOnClickListener {
@@ -97,7 +98,9 @@ class GraduatesFragment : Fragment() {
             when (it.status) {
                 Resource.Status.LOADING -> {
                     binding.refresh.isRefreshing = false
-                    binding.loading.visible(true)
+                    if(graduateAdapter.currentList.isEmpty()) {
+                        binding.loading.visible(true)
+                    }
                 }
                 Resource.Status.SUCCESS -> {
                     binding.loading.visible(false)

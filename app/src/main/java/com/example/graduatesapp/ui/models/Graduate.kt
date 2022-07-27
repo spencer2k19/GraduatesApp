@@ -14,6 +14,7 @@ data class Graduate(
     val bio:String,
     val linkedln:String?,
     val avatar:String?,
+    val banner:String?,
    val sectorId:Int,
    val diplomaId:Int,
 ):Parcelable {
@@ -25,6 +26,7 @@ data class Graduate(
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readInt(),
@@ -42,6 +44,7 @@ data class Graduate(
         parcel.writeString(bio)
         parcel.writeString(linkedln)
         parcel.writeString(avatar)
+        parcel.writeString(banner)
         parcel.writeInt(sectorId)
         parcel.writeInt(diplomaId)
     }

@@ -79,6 +79,24 @@ class DescriptionFragment : Fragment() {
         binding.bio.text = graduate.bio
         binding.phone.text = graduate.tel
         binding.location.text = graduate.address
+
+
+        graduate.banner?.apply {
+            val url = "${EndPoints.BASE_URL_FILES}/$this"
+            Log.e("avatar", "Url avatar: $url")
+            url.let {
+                Glide.with(requireContext())
+                    .load(Uri.parse(it))
+                    .apply(
+                        RequestOptions().centerCrop().diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                            .placeholder(R.drawable.progress_animation)
+                            .error(R.drawable.ic_broken_image)
+                    )
+                    .into(binding.banner)
+            }
+        }
+
+
         graduate.avatar?.apply {
             val url = "${EndPoints.BASE_URL_FILES}/$this"
             Log.e("avatar", "Url avatar: $url")

@@ -13,6 +13,7 @@ data class NetworkGraduate(
     val bio:String,
     val linkedln:String?,
     val avatar:String?,
+    val banner:String?,
     @SerializedName("sector_id")val sectorId:Int,
     @SerializedName("diploma_id")val diplomaId:Int,
 )
@@ -25,6 +26,6 @@ data class ResponseGraduates(
 
 fun List<NetworkGraduate>.toListModel():List<Graduate>{
     return map {
-        Graduate(it.id,it.firstName,it.lastName,it.email,it.tel,it.address,it.bio,it.linkedln,it.avatar,it.sectorId,it.diplomaId)
+        Graduate(it.id,it.firstName,it.lastName,it.email,it.tel,it.address,it.bio,it.linkedln,it.avatar,it.banner,it.sectorId,it.diplomaId)
     }
 }

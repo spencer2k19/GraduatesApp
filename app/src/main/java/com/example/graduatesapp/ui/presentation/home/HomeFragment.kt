@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sectorAdapter = SectorAdapter {
-            val action = HomeFragmentDirections.actionHomeFragmentToGraduatesFragment(it.id)
+            val action = HomeFragmentDirections.actionHomeFragmentToDescriptionSectorFragment(it)
             findNavController().navigate(action)
         }
         binding.listSectors.adapter = sectorAdapter
@@ -68,7 +68,10 @@ class HomeFragment : Fragment() {
             when(it.status) {
                 Resource.Status.LOADING -> {
                     binding.swipeRefresh.isRefreshing = false
-                    binding.loading.visible(true)
+                    if(sectorAdapter.currentList.isEmpty()) {
+                        binding.loading.visible(true)
+                    }
+
                 }
                 Resource.Status.SUCCESS -> {
                     binding.loading.visible(false)

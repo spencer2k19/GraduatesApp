@@ -141,6 +141,29 @@
                                 android:layout_height="wrap_content"
                                 />
 
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/confondu"
+                                android:layout_width="100dp"
+                                android:tag="4"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_chip_state_list"
+                                app:checkedIconVisible="false"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:checkable="true"
+                                android:elevation="@null"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:chipBackgroundColor="@color/bg_chip_state_list"
+                                android:text="@string/confondu"
+                                android:gravity="center"
+                                android:textAlignment="center"
+                                android:layout_height="wrap_content"
+                                />
+
+
+
+
+
 
                         </com.google.android.material.chip.ChipGroup>
 

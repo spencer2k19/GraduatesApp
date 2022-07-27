@@ -39,7 +39,11 @@ class LoginFragment : Fragment() {
             verifyEntryUser()
         }
         binding.register.setOnClickListener {
-            findNavController().popBackStack()
+           try {
+               findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+           }catch (exception:Exception) {
+
+           }
         }
         registerEntryResult()
     }

@@ -38,7 +38,7 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.connexion.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+            findNavController().popBackStack()
         }
         binding.register.setOnClickListener {
             verifyEntryUser()
@@ -71,7 +71,7 @@ class RegisterFragment : Fragment() {
                 }
                 Resource.Status.SUCCESS -> {
                     binding.register.setShowProgress(false,getString(R.string.valider))
-                    findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                    findNavController().popBackStack()
                 }
                 Resource.Status.ERROR -> {
                     binding.register.setShowProgress(false,getString(R.string.valider))

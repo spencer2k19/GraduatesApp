@@ -17,8 +17,8 @@
             android:id="@+id/action_homeFragment_to_sectorsFragment"
             app:destination="@id/sectorsFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_graduatesFragment"
-            app:destination="@id/graduatesFragment" />
+            android:id="@+id/action_homeFragment_to_descriptionSectorFragment"
+            app:destination="@id/descriptionSectorFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -31,8 +31,8 @@
         android:label="fragment_sectors"
         tools:layout="@layout/fragment_sectors" >
         <action
-            android:id="@+id/action_sectorsFragment_to_graduatesFragment"
-            app:destination="@id/graduatesFragment" />
+            android:id="@+id/action_sectorsFragment_to_descriptionSectorFragment"
+            app:destination="@id/descriptionSectorFragment" />
     </fragment>
     <fragment
         android:id="@+id/graduatesFragment"
@@ -55,4 +55,16 @@
             android:name="graduate"
             app:argType="com.example.graduatesapp.ui.models.Graduate" />
     </fragment>
+    <dialog
+        android:id="@+id/descriptionSectorFragment"
+        tools:layout="@layout/fragment_description_sector"
+        android:name="com.example.graduatesapp.ui.presentation.home.DescriptionSectorFragment"
+        android:label="DescriptionSectorFragment" >
+        <argument
+            android:name="sector"
+            app:argType="com.example.graduatesapp.ui.models.Sector" />
+        <action
+            android:id="@+id/action_descriptionSectorFragment_to_graduatesFragment"
+            app:destination="@id/graduatesFragment" />
+    </dialog>
 </navigation>

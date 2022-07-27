@@ -36,7 +36,7 @@ class SectorsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sectorAdapter = SectorAdapter {
-            val action = SectorsFragmentDirections.actionSectorsFragmentToGraduatesFragment(it.id)
+            val action = SectorsFragmentDirections.actionSectorsFragmentToDescriptionSectorFragment(it)
             findNavController().navigate(action)
         }
         binding.sectors.adapter = sectorAdapter
@@ -56,7 +56,9 @@ class SectorsFragment : Fragment() {
             when(it.status) {
                 Resource.Status.LOADING -> {
                     binding.refresh.isRefreshing = false
-                    binding.loading.visible(true)
+                    if(sectorAdapter.currentList.isEmpty()) {
+                        binding.loading.visible(true)
+                    }
                 }
                 Resource.Status.SUCCESS -> {
                     binding.loading.visible(false)

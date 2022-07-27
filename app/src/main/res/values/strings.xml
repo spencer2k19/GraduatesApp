@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">GraduatesApp</string>
     <string name="correct_input">Veuillez remplir ce champ</string>
+    <string name="creer_un_compte">Creer un compte</string>
+    <string name="nom_d_utilisateur">Nom d\'utilisateur</string>
+    <string name="addresse_email">Addresse email</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vous_n_avez_pas_de_compte">Vous n\'avez pas de compte?</string>
+    <string name="valider">Valider</string>
+    <string name="inscrivez_vous">Inscrivez-vous</string>
+    <string name="inscription">Inscription</string>
+    <string name="connectez_vous">Connectez-vous</string>
 </resources>

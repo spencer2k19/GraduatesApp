@@ -1,5 +1,6 @@
 package com.example.graduatesapp.data.models
 
+import com.example.graduatesapp.ui.models.Graduate
 import com.google.gson.annotations.SerializedName
 
 data class NetworkGraduate(
@@ -21,3 +22,9 @@ data class ResponseGraduates(
     val data:List<NetworkGraduate>,
     val message:String
 )
+
+fun List<NetworkGraduate>.toListModel():List<Graduate>{
+    return map {
+        Graduate(it.id,it.firstName,it.lastName,it.email,it.tel,it.address,it.bio,it.linkedln,it.avatar,it.sectorId,it.diplomaId)
+    }
+}

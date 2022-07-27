@@ -36,7 +36,8 @@ class SectorsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sectorAdapter = SectorAdapter {
-
+            val action = SectorsFragmentDirections.actionSectorsFragmentToGraduatesFragment(it.id)
+            findNavController().navigate(action)
         }
         binding.sectors.adapter = sectorAdapter
         binding.refresh.setOnRefreshListener {

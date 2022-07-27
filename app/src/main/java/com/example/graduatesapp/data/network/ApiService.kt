@@ -30,6 +30,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST(EndPoints.GRADUATES_URL)
     suspend fun fetchGraduates(
+        @Header("Authorization")authorization: String,
         @Field("diploma_id")diplomaId:String,
         @Field("sector_id")sectorId:String
     ):Response<ResponseGraduates>

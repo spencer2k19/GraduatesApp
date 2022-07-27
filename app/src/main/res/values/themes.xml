@@ -26,5 +26,20 @@
         <item name="boxBackgroundColor">@color/white</item>
     </style>
 
+    <style name="ChoiceChip" parent="Base.Widget.MaterialComponents.Chip">
+        <item name="checkedIconVisible">false</item>
+        <item name="android:textColor">@color/blueColor</item>
+        <item name="chipBackgroundColor">#e6ebff</item>
+
+        <item name="android:checkable">true</item>
+
+        <item name="chipIconVisible">false</item>
+        <item name="closeIconVisible">false</item>
+
+        <item name="checkedIcon">@drawable/ic_mtrl_chip_checked_black</item>
+        <item name="rippleColor">@color/mtrl_choice_chip_ripple_color</item>
+
+    </style>
+
 
 </resources>

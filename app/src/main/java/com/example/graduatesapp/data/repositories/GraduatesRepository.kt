@@ -27,9 +27,9 @@ class GraduatesRepository @Inject constructor(
         }
     }
 
-    suspend fun fetchGraduates(sectorId:String,diplomaId:String): Resource<ResponseGraduates> {
+    suspend fun fetchGraduates(authorization:String,sectorId:String,diplomaId:String): Resource<ResponseGraduates> {
         return withContext(defaultDispatcher) {
-            safeApiCall { graduatesDataSource.fetchGraduates(sectorId, diplomaId) }
+            safeApiCall { graduatesDataSource.fetchGraduates(authorization,sectorId, diplomaId) }
         }
     }
 

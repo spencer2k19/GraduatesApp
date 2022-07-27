@@ -36,16 +36,23 @@
     </fragment>
     <fragment
         android:id="@+id/graduatesFragment"
-        android:name="com.example.graduatesapp.ui.presentation.home.GraduatesFragment"
+        android:name="com.example.graduatesapp.ui.presentation.home.graduates.GraduatesFragment"
         android:label="fragment_graduates"
         tools:layout="@layout/fragment_graduates" >
+        <argument
+            android:name="sectorId"
+            app:argType="integer" />
         <action
-            android:id="@+id/action_graduatesFragment_to_graduateDescriptionFragment"
-            app:destination="@id/graduateDescriptionFragment" />
+            android:id="@+id/action_graduatesFragment_to_description"
+            app:destination="@id/description" />
     </fragment>
     <fragment
-        android:id="@+id/graduateDescriptionFragment"
-        android:name="com.example.graduatesapp.ui.presentation.home.GraduateDescriptionFragment"
+        android:id="@+id/description"
+        android:name="com.example.graduatesapp.ui.presentation.home.graduates.DescriptionFragment"
         android:label="fragment_graduate_description"
-        tools:layout="@layout/fragment_graduate_description" />
+        tools:layout="@layout/fragment_graduate_description" >
+        <argument
+            android:name="graduate"
+            app:argType="com.example.graduatesapp.ui.models.Graduate" />
+    </fragment>
 </navigation>

@@ -35,7 +35,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sectorAdapter = SectorAdapter {
-
+            val action = HomeFragmentDirections.actionHomeFragmentToGraduatesFragment(it.id)
+            findNavController().navigate(action)
         }
         binding.listSectors.adapter = sectorAdapter
         binding.swipeRefresh.setOnRefreshListener {

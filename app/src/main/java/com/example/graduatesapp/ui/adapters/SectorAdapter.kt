@@ -30,7 +30,7 @@ class SectorAdapter(val onClick:(item: Sector)->Unit):ListAdapter<Sector,SectorA
                 description = description.substring(0,25)+"...."
             }
             binding.description.text = description
-            binding.sectorName.setOnClickListener {
+            binding.sectorItem.setOnClickListener {
                 onClick(item)
             }
         }

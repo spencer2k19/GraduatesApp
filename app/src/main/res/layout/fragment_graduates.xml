@@ -1,14 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.presentation.home.GraduatesFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                tools:context=".ui.presentation.home.SectorsFragment">
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="20dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/back"
+                        android:layout_width="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:background="@android:color/transparent"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/heading"
+                        android:text="Diplômés"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/back"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp" />
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:src="@drawable/ic_baseline_search_24"
+                        app:layout_constraintTop_toTopOf="@id/heading"
+                        app:layout_constraintBottom_toBottomOf="@id/heading"
+
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:layout_width="wrap_content"
+                            android:id="@+id/diplomas"
+                            app:singleLine="true"
+                            app:singleSelection="true"
+                            android:paddingHorizontal="20dp"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/license"
+                                android:tag="1"
+                                android:layout_width="100dp"
+                                android:textColor="@color/text_chip_state_list"
+                                android:text="@string/licence"
+                                android:elevation="@null"
+                                android:checkable="true"
+                                app:checkedIconVisible="false"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:fontFamily="@font/montserrat_alternates"
+                                app:chipBackgroundColor="@color/bg_chip_state_list"
+                                android:gravity="center"
+                                android:textStyle="bold"
+
+                                android:textAlignment="center"
+                                android:layout_height="wrap_content"
+                                />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/master"
+                                android:tag="2"
+                                android:textStyle="bold"
+                                android:layout_width="100dp"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:text="@string/master"
+                                android:elevation="@null"
+                                app:checkedIconVisible="false"
+                                android:checkable="true"
+                                android:clickable="true"
+                                android:textColor="@color/text_chip_state_list"
+                                android:focusable="true"
+                                app:chipBackgroundColor="@color/bg_chip_state_list"
+                                android:gravity="center"
+                                android:textAlignment="center"
+                                android:layout_height="wrap_content"
+                                />
+
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/doctorat"
+                                android:layout_width="100dp"
+                                android:tag="3"
+                                android:textStyle="bold"
+                                android:textColor="@color/text_chip_state_list"
+                                app:checkedIconVisible="false"
+                                android:fontFamily="@font/montserrat_alternates"
+                                android:checkable="true"
+                                android:elevation="@null"
+                                android:clickable="true"
+                                android:focusable="true"
+                                app:chipBackgroundColor="@color/bg_chip_state_list"
+                                android:text="@string/doctorat"
+                                android:gravity="center"
+                                android:textAlignment="center"
+                                android:layout_height="wrap_content"
+                                />
+
+
+                        </com.google.android.material.chip.ChipGroup>
+
+
+
+                </HorizontalScrollView>
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+
+                    />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/graduates"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/graduate_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

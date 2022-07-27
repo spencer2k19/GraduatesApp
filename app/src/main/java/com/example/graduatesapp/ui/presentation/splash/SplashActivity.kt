@@ -9,7 +9,9 @@ import androidx.lifecycle.Observer
 import com.example.graduatesapp.R
 import com.example.graduatesapp.ui.presentation.auth.AuthActivity
 import com.example.graduatesapp.ui.presentation.home.HomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     private val introViewModel:IntroViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {

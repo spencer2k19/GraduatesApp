@@ -1,12 +1,9 @@
 package com.example.graduatesapp.data.network
 
-import com.example.graduatesapp.data.models.ResponseLoginResult
-import com.example.graduatesapp.data.models.ResponseRegisterResult
+import com.example.graduatesapp.data.models.*
 import com.example.graduatesapp.helper.EndPoints
 import retrofit2.Response
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -22,5 +19,25 @@ interface ApiService {
         @Field("email")email: String,
         @Field("password")password: String,
         @Field("c_password")confirmPassword: String):Response<ResponseRegisterResult>
+
+
+    @GET(EndPoints.DIPLOMAS_URL)
+    suspend fun fetchDiplomas():Response<ResponseDiplomas>
+
+    @GET(EndPoints.SECTORS_URL)
+    suspend fun fetchSectors(@Header("Authorization")authorization: String):Response<ResponseSectors>
+
+    @FormUrlEncoded
+    @POST(EndPoints.GRADUATES_URL)
+    suspend fun fetchGraduates(
+        @Field("diploma_id")diplomaId:String,
+        @Field("sector_id")sectorId:String
+    ):Response<ResponseGraduates>
+
+
+
+
+
+
 
 }

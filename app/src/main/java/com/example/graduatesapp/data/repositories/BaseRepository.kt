@@ -1,6 +1,7 @@
 package com.example.graduatesapp.data.repositories
 
 import android.util.Log
+import com.example.graduatesapp.data.models.NetworkError
 import com.example.graduatesapp.helper.Resource
 import com.google.gson.Gson
 import retrofit2.Response
@@ -13,12 +14,13 @@ open class BaseRepository {
             response = call.invoke()
 
             if (response.isSuccessful && response.errorBody() == null && response.body() != null) {
-                Log.e("result","BODY: ${response.body()}")
+                Log.e("api_network","BODY: ${response.body()}")
                 Resource.success(response.body()!!)
             } else {
                 val gson = Gson()
-//                Log.e("error","Error global: ${response.code()} ${response.errorBody()!!.string()}")
-                error("${response.code()} ${response.message()}")
+                val r = gson.fromJson(response.errorBody()!!.charStream(),NetworkError::class.java)
+//                Log.e("api_network","Error global: ${response.code()} ${response.errorBody()!!.string()}")
+                error(r.message)
             }
 
         } catch (e: Exception) {
@@ -29,7 +31,7 @@ open class BaseRepository {
 
 
     private fun <T> error(message: String): Resource<T> {
-        Log.e("remoteDataSource", message)
+        Log.e("api_network", message)
         return Resource.error(message)
     }
 }

@@ -30,7 +30,7 @@ private val authRepository: AuthRepository):ViewModel() {
     fun saveInfos(info:NetworkLoginResult) {
         viewModelScope.launch {
             info.apply {
-                editor.putString("access_token",info.token)
+                editor.putString("access_token","${info.tokenType} ${info.token}")
                 editor.putString("token_type",info.tokenType)
                 editor.putString("name",info.user.name)
                 editor.putString("email",info.user.email)

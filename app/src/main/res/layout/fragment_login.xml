@@ -24,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:text="Connexion"
                 android:textColor="@color/black"
-                android:fontFamily="@font/montserrat_thin"
                 android:textStyle="bold"
                 android:textSize="25sp"
 

@@ -53,6 +53,13 @@ class HomeFragment : Fragment() {
             }
 
         }
+        binding.avatar.setOnClickListener {
+            try {
+                findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+            }catch(exception:Exception) {
+
+            }
+        }
 
     }
 

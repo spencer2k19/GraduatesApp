@@ -1,7 +1,9 @@
 package com.example.graduatesapp.ui.utils
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -14,6 +16,11 @@ import com.google.android.material.textfield.TextInputLayout
 
 fun View.visible(isVisible: Boolean) {
     visibility = if (isVisible) View.VISIBLE else View.GONE
+}
+
+fun Context.callPhone(tel:String) {
+    val callIntent = Intent(Intent.ACTION_CALL, Uri.parse("tel:$tel"))
+    startActivity(callIntent)
 }
 
 fun Context.showMessage(message: String, duration: Int = Toast.LENGTH_LONG) {

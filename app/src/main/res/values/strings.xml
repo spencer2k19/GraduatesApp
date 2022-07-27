@@ -21,4 +21,11 @@
     <string name="contact">Contact</string>
     <string name="e_mail">E-mail</string>
     <string name="t_l_phone">Téléphone</string>
+    <string name="linkedln">Linkedln</string>
+    <string name="non_defini">Non défini</string>
+    <string name="details_personnels">Details personnels</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="deconnexion">Deconnexion</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
 </resources>

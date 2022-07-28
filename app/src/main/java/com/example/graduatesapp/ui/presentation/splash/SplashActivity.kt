@@ -21,6 +21,12 @@ class SplashActivity : AppCompatActivity() {
             introViewModel.startup()
         },3000L)
 
+        introViewModel.skipIntro.observe(this, Observer {
+            if(it) {
+                startActivity(Intent(this,IntroActivity::class.java))
+                finish()
+            }
+        })
         introViewModel.isLogged.observe(this, Observer {
             if(it) {
                 startActivity(Intent(this,HomeActivity::class.java))

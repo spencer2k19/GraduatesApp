@@ -31,4 +31,5 @@
     <string name="confondu">Confondu</string>
     <string name="overview">Overview</string>
     <string name="permission_denied">Permission refusee</string>
+    <string name="aucun_dipl_m_disponible">Aucun diplômé disponible</string>
 </resources>

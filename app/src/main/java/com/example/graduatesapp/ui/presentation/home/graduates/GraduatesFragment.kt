@@ -97,6 +97,7 @@ class GraduatesFragment : Fragment() {
         graduateViewModel.resultGraduates.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.LOADING -> {
+                    binding.emptyGraduates.visible(false)
                     binding.refresh.isRefreshing = false
                     if(graduateAdapter.currentList.isEmpty()) {
                         binding.loading.visible(true)
@@ -105,7 +106,12 @@ class GraduatesFragment : Fragment() {
                 Resource.Status.SUCCESS -> {
                     binding.loading.visible(false)
                     val graduates = it.data!!.data.toListModel()
-                    graduateAdapter.submitList(graduates)
+                    if(graduates.isNotEmpty()) {
+                        graduateAdapter.submitList(graduates)
+                    } else {
+                        binding.emptyGraduates.visible(true)
+                    }
+
                 }
                 Resource.Status.ERROR -> {
                     binding.loading.visible(false)

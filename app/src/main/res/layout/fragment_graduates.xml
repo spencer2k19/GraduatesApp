@@ -57,6 +57,7 @@
 
                     <androidx.constraintlayout.utils.widget.ImageFilterButton
                         android:layout_width="wrap_content"
+                        android:visibility="gone"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -178,6 +179,18 @@
                     android:visibility="gone"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/empty_graduates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="center"
+                    android:text="@string/aucun_dipl_m_disponible"
+
 
                     />
 

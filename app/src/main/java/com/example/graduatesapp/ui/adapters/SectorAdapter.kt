@@ -21,6 +21,7 @@ class SectorAdapter(val onClick:(item: Sector)->Unit):ListAdapter<Sector,SectorA
 
     }
 
+
     class SectorViewHolder(val binding:SectorItemBinding):RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item:Sector,onClick:(item: Sector)->Unit) {
@@ -53,4 +54,6 @@ class SectorAdapter(val onClick:(item: Sector)->Unit):ListAdapter<Sector,SectorA
     override fun onBindViewHolder(holder: SectorViewHolder, position: Int) {
         holder.bind(getItem(position),onClick)
     }
+
+
 }

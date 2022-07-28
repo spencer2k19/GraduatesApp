@@ -77,10 +77,10 @@ private val userRepository: UserRepository):ViewModel() {
         }
     }
 
-
     fun logout() {
         viewModelScope.launch {
             editor.clear()
+            editor.putBoolean("isFirstStart",false)
             editor.commit()
             _isCleared.value = true
         }

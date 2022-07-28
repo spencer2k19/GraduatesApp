@@ -2,6 +2,7 @@ package com.example.graduatesapp.data.repositories
 
 import android.util.Log
 import com.example.graduatesapp.data.models.NetworkError
+import com.example.graduatesapp.data.models.NetworkError422
 import com.example.graduatesapp.helper.Resource
 import com.google.gson.Gson
 import retrofit2.Response
@@ -18,9 +19,23 @@ open class BaseRepository {
                 Resource.success(response.body()!!)
             } else {
                 val gson = Gson()
-                val r = gson.fromJson(response.errorBody()!!.charStream(),NetworkError::class.java)
 //                Log.e("api_network","Error global: ${response.code()} ${response.errorBody()!!.string()}")
-                error(r.message)
+                when(response.code()) {
+                    400-> {
+                        val r = gson.fromJson(response.errorBody()!!.charStream(),NetworkError::class.java)
+                        error(r.message)
+                    }
+                    422 -> {
+                        val r = gson.fromJson(response.errorBody()!!.charStream(),NetworkError422::class.java)
+                        error(r.data.values.toMutableList()[0])
+                    }
+                    else -> {
+                        error(response.message())
+                    }
+                }
+
+
+
             }
 
         } catch (e: Exception) {

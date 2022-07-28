@@ -23,6 +23,7 @@
         tools:context=".ui.presentation.home.SectorsFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_heading"
             android:layout_width="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="20dp"
@@ -53,7 +54,9 @@
                 android:layout_marginStart="10dp" />
 
             <androidx.constraintlayout.utils.widget.ImageFilterButton
+                android:id="@+id/search"
                 android:layout_width="wrap_content"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +66,9 @@
 
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
         <ProgressBar
             android:id="@+id/loading"

@@ -12,6 +12,7 @@ import com.example.graduatesapp.R
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
+import okhttp3.RequestBody
 
 
 fun View.visible(isVisible: Boolean) {
@@ -22,6 +23,8 @@ fun Context.callPhone(tel:String) {
     val callIntent = Intent(Intent.ACTION_CALL, Uri.parse("tel:$tel"))
     startActivity(callIntent)
 }
+
+
 
 fun Context.showMessage(message: String, duration: Int = Toast.LENGTH_LONG) {
     Toast.makeText(this, message, duration).show()

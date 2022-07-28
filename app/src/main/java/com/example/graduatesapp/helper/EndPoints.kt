@@ -10,5 +10,7 @@ class EndPoints {
         const val  DIPLOMAS_URL = "diplomas"
         const val SECTORS_URL = "sectors"
         const val GRADUATES_URL = "graduates"
+        const val INFOS_USER_URL = "infos"
+        const val UPDATE_IMAGE_URL = "upload"
     }
 }

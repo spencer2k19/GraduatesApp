@@ -30,4 +30,5 @@
     <string name="no">Non</string>
     <string name="confondu">Confondu</string>
     <string name="overview">Overview</string>
+    <string name="permission_denied">Permission refusee</string>
 </resources>

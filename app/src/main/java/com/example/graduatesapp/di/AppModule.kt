@@ -1,9 +1,6 @@
 package com.example.graduatesapp.di
 
-import com.example.graduatesapp.data.network.ApiService
-import com.example.graduatesapp.data.network.AuthDataSource
-import com.example.graduatesapp.data.network.BasicInterceptor
-import com.example.graduatesapp.data.network.GraduatesDataSource
+import com.example.graduatesapp.data.network.*
 import com.example.graduatesapp.helper.EndPoints
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -56,6 +53,10 @@ class AppModule {
     @Provides
     @Singleton
     fun providesGraduatesDataSource(apiService: ApiService) = GraduatesDataSource(apiService)
+
+    @Provides
+    @Singleton
+    fun providesUserDataSource(apiService: ApiService) = UserDataSource(apiService)
 
 
 

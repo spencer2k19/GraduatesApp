@@ -84,7 +84,7 @@ class GraduatesFragment : Fragment() {
                     else -> graduateViewModel.fetchGraduates()
                 }
             } else {
-                graduateViewModel.fetchGraduates()
+                graduateViewModel.fetchGraduates(sectorId.toString())
             }
 
         }

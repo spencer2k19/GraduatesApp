@@ -54,9 +54,9 @@
 
                <de.hdodenhof.circleimageview.CircleImageView
                    android:id="@+id/avatar"
-                   android:layout_width="40dp"
+                   android:layout_width="50dp"
                    android:clickable="true"
-                   android:layout_height="40dp"
+                   android:layout_height="50dp"
                    android:scaleType="centerCrop"
                    android:src="@drawable/blank"
                    app:layout_constraintTop_toTopOf="@id/image_icon"

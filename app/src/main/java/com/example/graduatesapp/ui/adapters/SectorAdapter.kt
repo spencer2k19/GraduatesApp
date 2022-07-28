@@ -24,7 +24,11 @@ class SectorAdapter(val onClick:(item: Sector)->Unit):ListAdapter<Sector,SectorA
     class SectorViewHolder(val binding:SectorItemBinding):RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item:Sector,onClick:(item: Sector)->Unit) {
-            binding.sectorName.text = item.name
+            var name = item.name
+            if(name.length > 24) {
+                name = name.substring(0,23)+"..."
+            }
+            binding.sectorName.text = name
             var description = item.description
             if(description.length > 26 ) {
                 description = description.substring(0,25)+"...."

@@ -2,9 +2,10 @@ package com.example.graduatesapp.helper
 
 class EndPoints {
     companion object {
-        const val BASE_URL = "http://192.168.43.136/diplomas/public/api/"
-        const val BASE_URL_FILES = "http://192.168.43.136/diplomas/public/images/graduates"
-        const val BASE_URL_AVATAR = "http://192.168.43.136/diplomas/public/avatars"
+        private const val HOST_URL = "http://192.168.43.136/diplomas/public"
+        const val BASE_URL = "$HOST_URL/api/"
+        const val BASE_URL_FILES = "$HOST_URL/images/graduates"
+        const val BASE_URL_AVATAR = "$HOST_URL/avatars"
         const val LOGIN_URL = "login"
         const val REGISTER_URL = "register"
         const val  DIPLOMAS_URL = "diplomas"

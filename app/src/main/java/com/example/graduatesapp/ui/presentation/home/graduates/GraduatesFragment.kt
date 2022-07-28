@@ -106,9 +106,8 @@ class GraduatesFragment : Fragment() {
                 Resource.Status.SUCCESS -> {
                     binding.loading.visible(false)
                     val graduates = it.data!!.data.toListModel()
-                    if(graduates.isNotEmpty()) {
-                        graduateAdapter.submitList(graduates)
-                    } else {
+                    graduateAdapter.submitList(graduates)
+                    if(graduates.isEmpty()) {
                         binding.emptyGraduates.visible(true)
                     }
 

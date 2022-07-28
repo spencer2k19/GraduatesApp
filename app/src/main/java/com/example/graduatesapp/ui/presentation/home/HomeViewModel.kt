@@ -29,6 +29,7 @@ class HomeViewModel @Inject constructor(
     private val sharedPreferences = context.getSharedPreferences(KEY_PREFERENCE,Context.MODE_PRIVATE)
     private val accessToken = sharedPreferences.getString("access_token","")!!
     val avatar = sharedPreferences.getString("avatar","")
+    val name = sharedPreferences.getString("name","")
 
 
     fun fetchSectors() {

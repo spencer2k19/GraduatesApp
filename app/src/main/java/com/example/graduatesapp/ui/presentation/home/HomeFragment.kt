@@ -67,6 +67,7 @@ class HomeFragment : Fragment() {
             }
         }
 
+        binding.welcome.text = getString(R.string.welcome_back,homeViewModel.name)
         loadImage(homeViewModel.avatar)
 
     }
